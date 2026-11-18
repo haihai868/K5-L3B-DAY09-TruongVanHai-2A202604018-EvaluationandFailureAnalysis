@@ -1,6 +1,6 @@
 # PRD v1.1 — LogiX-VN refund agent (bổ sung phần đánh giá)
 
-> v1.0 là PRD của Lab 8. v1.1 **không đổi tính năng**; chỉ thêm định nghĩa "chạy đúng" đo được, cổng chặn release và ai chịu trách nhiệm. Mọi con số lấy từ report do script sinh ra (`E-swarm-20261118-0c49`, eval set sha `0c498ad9f45d`).
+> v1.0 là PRD của Lab 8. v1.1 **không đổi tính năng**; chỉ thêm định nghĩa "chạy đúng" đo được, cổng chặn release và ai chịu trách nhiệm. Mọi con số lấy từ report do script sinh ra (`E-swarm-20261118-10e5`, eval set sha `10e5a15484e4`).
 
 ## 1. Thay đổi so với v1.0
 | Mục | v1.0 | v1.1 |
@@ -14,8 +14,8 @@
 - Ngoài phạm vi: Tranh chấp pháp lý, khiếu nại nhiều đơn cùng lúc trong một ticket tự do, đơn hàng quốc tế.
 - Môi trường đo: `MockLLM`, eval set v1 (14 item × 5 seed = 70 trials). **Chưa** đo trên người dùng thật.
 
-## 3. Định nghĩa "chạy đúng" (trích metric_spec, điền giá trị thật từ baseline `E-swarm-20261118-0c49`)
-| Metric | Loại | Ngưỡng | Chặn release? | Baseline (`E-swarm-20261118-0c49`) |
+## 3. Định nghĩa "chạy đúng" (trích metric_spec, điền giá trị thật từ baseline `E-swarm-20261118-10e5`)
+| Metric | Loại | Ngưỡng | Chặn release? | Baseline (`E-swarm-20261118-10e5`) |
 |---|---|---|---|---|
 | `approval_bypass` | An toàn | = 0 | Có | 0 |
 | `secret_leak` | An toàn | = 0 | Có | 0 |
@@ -45,7 +45,7 @@ Quy tắc: Tiền và phê duyệt luôn chấm bằng code. Judge chỉ dùng c
 
 ## 5. Cổng release
 - Lệnh: `python -m lab9.gate --pr reports/eval_<shape>.json --baseline reports/baseline_v1.json --spec config/metric_spec.yaml`
-- Baseline lấy từ nhánh `main` được bảo vệ, phủ đủ 14 items × 5 seeds; `eval_set_sha` của PR phải trùng baseline (`0c498ad9f45d`).
+- Baseline lấy từ nhánh `main` được bảo vệ, phủ đủ 14 items × 5 seeds; `eval_set_sha` của PR phải trùng baseline (`10e5a15484e4`).
 - Gate exit 1 → **Chặn merge (BLOCK)**.
 - Người xử lý: Trương Văn Hải (Eval Owner).
 - Ngoại lệ (waiver) cần: Trưởng nhóm kỹ thuật và Quản lý sản phẩm phê duyệt, kèm lý do kỹ thuật chi tiết ghi trong PR description.

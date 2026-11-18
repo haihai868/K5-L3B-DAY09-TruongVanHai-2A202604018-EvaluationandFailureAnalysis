@@ -1,0 +1,8 @@
+# Keep fixtures byte-identical on every OS (Windows autocrlf would rewrite them).
+* text=auto eol=lf
+*.jsonl text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.sqlite binary
+*.png binary
+*.pdf binary
