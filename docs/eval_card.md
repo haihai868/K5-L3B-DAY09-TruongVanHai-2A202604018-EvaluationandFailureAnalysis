@@ -2,10 +2,10 @@
 
 Card này đi kèm mỗi báo cáo đánh giá chất lượng agent và được dùng làm căn cứ release.
 
-- **Run ID / eval set SHA:** `E-swarm-20261118-0c49` / SHA-12 `0c498ad9f45d`
+- **Run ID / eval set SHA:** `E-swarm-20261118-10e5` / SHA-12 `10e5a15484e4`
 - **Phiên bản:**
   - Code: repo `K5-L3B-DAY09-TruongVanHai-2A202604018-EvaluationandFailureAnalysis`
-  - Eval set: `v1` (`src/data/eval/eval_set_v1.jsonl`, SHA `0c498ad9f45d`)
+  - Eval set: `v1` (`src/data/eval/eval_set_v1.jsonl`, SHA `10e5a15484e4`)
   - Metric spec: `config/metric_spec.yaml` (v1.0)
   - Seeds: `[11, 22, 33, 44, 55]` (5 seed cố định, MockLLM)
 - **Eval set:** v1 gồm 14 item × 5 seed = 70 trials, nguồn `lab8_public`; nhãn tách rời tại `labels_v1.json` (không nhúng inline).
@@ -20,7 +20,7 @@ Card này đi kèm mỗi báo cáo đánh giá chất lượng agent và đượ
   - `cost_per_success`: System chi phí, max_increase ≤ 0.10 so với baseline (non-blocking)
 - **Kết quả baseline vs PR:**
 
-| Metric | Baseline (`swarm`: `E-swarm-20261118-0c49`) | PR `fixed` (`E-fixed-20261118-0c49`) | PR `seeded_regression` (`E-seeded_regression-20261118-0c49`) |
+| Metric | Baseline (`swarm`: `E-swarm-20261118-10e5`) | PR `fixed` (`E-fixed-20261118-10e5`) | PR `seeded_regression` (`E-seeded_regression-20261118-10e5`) |
 |---|---|---|---|
 | `approval_bypass` | 0 | 0 (ok) | 0 (ok) |
 | `secret_leak` | 0 | 0 (ok) | 0 (ok) |
@@ -47,8 +47,8 @@ Card này đi kèm mỗi báo cáo đánh giá chất lượng agent và đượ
 
 ## Phần mở rộng: Eval set v2 & Đánh giá nâng cao (M5–M7)
 
-- **Eval set v2:** Gồm 28 items (14 v1 items + 14 adversarial pack claims), SHA-12 `dd01bb2854c1`. Mapping toàn bộ attack mechanisms sang `FM-xx` thông qua `config/fm_map.yaml` (mỗi FM bị tấn công $\ge 3$ items).
-- **Baseline v2:** Run ID `E-swarm-20261118-dd01` trên 28 items × 5 seeds.
+- **Eval set v2:** Gồm 28 items (14 v1 items + 14 adversarial pack claims), SHA-12 `d2d9b66bc664`. Mapping toàn bộ attack mechanisms sang `FM-xx` thông qua `config/fm_map.yaml` (mỗi FM bị tấn công $\ge 3$ items).
+- **Baseline v2:** Run ID `E-swarm-20261118-d2d9` trên 28 items × 5 seeds.
   - `pass_rate`: 0.9786
   - `pass_hat_5`: 0.8929
   - `reply_matches_ledger`: 1.0000
